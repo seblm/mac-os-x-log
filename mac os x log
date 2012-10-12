@@ -1,0 +1,315 @@
+# installation de groovy
+$ brew install groovy
+
+# mise à jour des formulae brew
+$ sudo brew update
+# réparation après un brew update : "Error: Failure while executing: git checkout -q master"
+$ cd /usr/local
+$ sudo git reset --hard FETCH_HEAD
+
+# clé WPA WLANXEBIA-IT X3b1A1t156-75S3cur1ty
+# clé WPA Freebox_556C6F piscosos96-cominius9-pungunt2?-hores!
+  FreeWifi 5499827133 fd9gRjxmSYdBc4 (marche pas)
+
+# git
+# création d'un repository
+$ cd my-directory/ && git init
+# premier checkout d'un repository github existant
+$ git clone git@github.com:<user>/<project>.git
+# ajout des modifications sur le repository distant
+$ git push
+# création d'une branche
+$ git branch <nom-branche>
+# mise à jour de la branche courante avec une branche b1
+$ git merge b1
+# rejouer une liste de commits (les trois derniers par exemple)
+$ git rebase --interactive HEAD~3
+# lister toutes les branches, même celles qui sont cachées
+$ git branch -a
+# travailler sur la copie locale d'une branche distante existante
+$ git checkout -b experimental origin/experimental
+# partager un projet github
+# git remote add origin git@github.com:seblm/poker-hands-kata.git
+# git push -u origin master
+# créer une branche à partir d'un stash
+$ git stash
+$ git stash branch <nom-branche>
+# créer une branche à partir des changements non commités
+$ git checkout -b <nom-branche>
+$ git add (...) && git commit (...)
+
+# installation de PostgreSQL (9.1.2)
+$ brew install PostgreSQL
+# initialiser une base de données
+$ initdb /usr/local/var/postgres
+# démarrer ou arrêter PostgreSQL
+#  If this is your first install, automatically load on login with:
+$  mkdir -p ~/Library/LaunchAgents
+$  cp /usr/local/Cellar/postgresql/9.1.2/org.postgresql.postgres.plist ~/Library/LaunchAgents/
+$  launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+#  If this is an upgrade and you already have the org.postgresql.postgres.plist loaded:
+$  launchctl unload -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+$  cp /usr/local/Cellar/postgresql/9.1.2/org.postgresql.postgres.plist ~/Library/LaunchAgents/
+$  launchctl load -w ~/Library/LaunchAgents/org.postgresql.postgres.plist
+#  Or start manually with:
+$  pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
+#  And stop with:
+$  pg_ctl -D /usr/local/var/postgres stop -s -m fast
+# créer une base de données
+$ /usr/local/Cellar/postgresql/9.1.2/bin/createdb seb
+
+# support des liens symboliques dans le répertoire utilisateur (le lien pointe vers un sous-
+# répertoire de /Users/seb/Documents)
+$ sudo vi /etc/apache2/users/seb.conf
+  <Directory "/Users/seb/Sites/">
+      Options Indexes MultiViews FollowSymLinks
+      AllowOverride None
+      Order allow,deny
+      Allow from all
+  </Directory>
+$ chmod o+x /Users/seb/Documents
+
+# installation de go
+$ brew install mercurial go
+# installation du plugin go dans IntelliJ IDEA CE 11
+# installation de "Google Go Language"
+
+# installation de mysql
+$ brew install mysql
+# Set up databases to run AS YOUR USER ACCOUNT with:
+#     unset TMPDIR
+#     mysql_install_db --verbose --user=`whoami` --basedir="$(brew --prefix mysql)"
+#                      --datadir=/usr/local/var/mysql --tmpdir=/tmp
+# 
+# To set up base tables in another folder, or use a different user to run
+# mysqld, view the help for mysqld_install_db:
+#     mysql_install_db --help
+# 
+# and view the MySQL documentation:
+#   * http://dev.mysql.com/doc/refman/5.5/en/mysql-install-db.html
+#   * http://dev.mysql.com/doc/refman/5.5/en/default-privileges.html
+# 
+# To run as, for instance, user "mysql", you may need to `sudo`:
+#     sudo mysql_install_db ...options...
+# 
+# Start mysqld manually with:
+#     mysql.server start
+# 
+#     Note: if this fails, you probably forgot to run the first two steps up above
+# 
+# A "/etc/my.cnf" from another install may interfere with a Homebrew-built
+# server starting up correctly.
+# 
+# To connect:
+#     mysql -uroot
+# 
+# To launch on startup:
+# * if this is your first install:
+#     mkdir -p ~/Library/LaunchAgents
+#     cp /usr/local/Cellar/mysql/5.5.19/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
+#     launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+# 
+# * if this is an upgrade and you already have the homebrew.mxcl.mysql.plist loaded:
+#     launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+#     cp /usr/local/Cellar/mysql/5.5.19/homebrew.mxcl.mysql.plist ~/Library/LaunchAgents/
+#     launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mysql.plist
+# 
+# You may also need to edit the plist to use the correct "UserName".
+$ unset TMPDIR
+$ mysql_install_db --verbose --user=seb --basedir=/usr/local/Cellar/mysql/5.5.19
+                   --datadir=/usr/local/var/mysql --tmpdir=/tmp
+# To start mysqld at boot time you have to copy
+# support-files/mysql.server to the right place for your system
+# 
+# PLEASE REMEMBER TO SET A PASSWORD FOR THE MySQL root USER !
+# To do so, start the server, then issue the following commands:
+# 
+# /usr/local/Cellar/mysql/5.5.19/bin/mysqladmin -u root password 'new-password'
+# /usr/local/Cellar/mysql/5.5.19/bin/mysqladmin -u root -h MacBook-Pro-de-Sebastian-Le-Merdy.local
+                                                password 'new-password'
+# 
+# Alternatively you can run:
+# /usr/local/Cellar/mysql/5.5.19/bin/mysql_secure_installation
+# 
+# which will also give you the option of removing the test
+# databases and anonymous user created by default.  This is
+# strongly recommended for production servers.
+# 
+# See the manual for more instructions.
+# 
+# You can start the MySQL daemon with:
+# cd /usr/local/Cellar/mysql/5.5.19 ; /usr/local/Cellar/mysql/5.5.19/bin/mysqld_safe &
+# 
+# You can test the MySQL daemon with mysql-test-run.pl
+# cd /usr/local/Cellar/mysql/5.5.19/mysql-test ; perl mysql-test-run.pl
+# 
+# Please report any problems with the /usr/local/Cellar/mysql/5.5.19/scripts/mysqlbug script!
+$ cd /usr/local/Cellar/mysql/5.5.19
+# démarrage de mysql
+$ /usr/local/Cellar/mysql/5.5.19/bin/mysqld_safe &
+# ajout d'un mot de passe pour l'utilisateur root
+$ /usr/local/Cellar/mysql/5.5.19/bin/mysqladmin -u root password
+# arrêt de mysql
+$ /usr/local/Cellar/mysql/5.5.19/bin/mysqladmin -u root -p shutdown
+
+# installation de sonar
+$ cd /Applications/Java
+$ wget http://dist.sonar.codehaus.org/sonar-2.13.1.zip
+$ unzip sonar-2.13.1.zip
+$ cd sonar-2.13.1
+$ mysql -u root -p < extras/database/mysql/create_database.sql
+$ vi conf/sonar.properties
+  commenter l'url derby et décommenter l'url, le driverClassName et la validationQuery
+$ bin/macosx-universal-64/sonar.sh start
+# arrêter sonar
+$ cd /Applications/Java/sonar-2.13.1 ; bin/macosx-universal-64/sonar.sh stop
+
+# installation de sonar
+$ sudo install brew sonar
+$ sudo [/usr/local/bin/]sonar console
+
+# lancement de sonar dans maven (à vérifier)
+        <profile>
+            <id>sonar</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <sonar.jdbc.url>jdbc:mysql://localhost:3306/sonar?useUnicode=true&amp;characterEncoding=utf8</sonar.jdbc.url>
+                <sonar.jdbc.driver>com.mysql.jdbc.Driver</sonar.jdbc.driver>
+                <sonar.jdbc.username>sonar</sonar.jdbc.username>
+                <sonar.jdbc.password>sonar</sonar.jdbc.password>
+                <!-- La ligne ci-dessous n'est utile que si le port par défaut (9000) est modifié dans le fichier de configuration. -->
+                <sonar.host.url>http://url-serveur:1234</sonar.host.url>
+            </properties>
+        </profile>
+$ mvn sonar:sonar
+
+# installation de jekyll
+$ sudo gem update --system
+$ sudo gem install jekyll
+
+# installation du jdk d'Oracle
+# téléchargement et exécution de jdk-7u6-macosx-x64.dmg
+# activation et prioritisation dans "Préférences Java"
+# changement des raccourcis vers les exécutables java
+$ cd /usr/bin
+$ sudo rm java javac
+$ sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin/java
+$ sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin/javac
+# vi ~/.MacOSX/environment.plist
+  <?xml version="1.0" encoding="UTF-8"?>
+  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+  <plist version="1.0">
+  <dict>
+  	<key>JAVA_HOME</key>
+  	<!--/System/Library/Frameworks/JavaVM.framework/Home-->
+  	<string>/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home</string>
+  </dict>
+  </plist>
+
+# installation de git
+$ sudo brew install git
+  The OS X keychain credential helper has been installed to:
+    /usr/local/bin/git-credential-osxkeychain
+  The 'contrib' directory has been installed to:
+    /usr/local/share/git-core/contrib
+  Bash completion has been installed to:
+    /usr/local/etc/bash_completion.d
+# suppression du git fourni avec MacOSX
+$ cd /usr/bin
+$ sudo rm git                      && sudo ln -s /usr/local/bin/git
+$ sudo rm git-cvsserver            && sudo ln -s /usr/local/bin/git-cvsserver
+$ sudo rm git-receive-pack         && sudo ln -s                git git-receive-pack
+$ sudo rm git-shell                && sudo ln -s /usr/local/bin/git-shell
+$ sudo rm git-upload-archive-apple && sudo ln -s                git git-upload-archive 
+$ sudo rm git-upload-pack          && sudo ln -s /usr/local/bin/git-upload-pack
+$ sudo rm gitk                     && sudo ln -s /usr/local/bin/gitk
+# installation de subtree
+$ cd /usr/local/share/git-core/contrib/subtree
+$ make
+$ sudo make prefix=/usr/local/Cellar/git/1.7.12 install
+
+# installation de ruby via rvm
+$ curl -L get.rvm.io | bash -s stable
+# Installing RVM to /Users/seb/.rvm/
+#     Adding rvm PATH line to /Users/seb/.bashrc /Users/seb/.zshrc.
+#     Adding rvm loading line to /Users/seb/.bash_login /Users/seb/.zlogin.
+# 
+# Installation of RVM in /Users/seb/.rvm/ is almost complete:
+# 
+#   * To start using RVM you need to run `source /Users/seb/.rvm/scripts/rvm`
+#     in all your open shell windows, in rare cases you need to reopen all shell windows.
+$ source ~/.rvm/scripts/rvm
+$ rvm install 1.9.2
+# To use an RVM installed Ruby as default, instead of the system ruby:
+# 
+#     rvm install 1.8.7 # installs patch 357: closest supported version
+#     rvm system ; rvm gemset export system.gems ; rvm 1.8.7 ; rvm gemset import system.gems # migrate your gems
+#     rvm alias create default 1.8.7
+
+# installation de extreme_startup
+$ gem install bundler
+$ git clone git://github.com/rchatley/extreme_startup.git
+$ cd extreme_startup
+$ bundle install
+$ ruby web_server.rb
+# or
+$ WARMUP=1 ruby web_server.rb
+
+# maven initial
+
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId></groupId>
+    <artifactId></artifactId>
+    <version>1.0-SNAPSHOT</version>
+
+    <properties>
+        <maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+</project>
+
+# installation de Python
+# déjà installé par XCode
+# installation de Flask
+$ easy_install Flask
+
+# installation du thème solarized pour IntelliJ
+$ cd ~/Library
+$ git clone git://github.com/jkaving/intellij-colors-solarized.git
+$ ln -s ~/Library/intellij-colors-solarized/Solarized\ Dark.xml ~/Library/Preferences/IdeaIC11/colors/Solarized\ Dark.xml
+
+# installation de scala
+==> Downloading http://www.scala-lang.org/downloads/distrib/files/scala-2.9.2.tgz
+######################################################################## 100,0%
+==> Downloading https://raw.github.com/scala/scala-dist/27bc0c25145a83691e3678c7dda602e765e13413/completion.d/2.9.1/scala
+######################################################################## 100,0%
+==> Caveats
+Bash completion has been installed to:
+  /usr/local/etc/bash_completion.d
+/usr/local/Cellar/scala/2.9.2: 38 files, 26M, built in 92 seconds
+
+# intégration d'un projet de mower
+$ cd ~/Documents/IdeaProjects/mowers
+$ md5 -s 20120911FlorentDuveau
+$ git subtree add --prefix=d7e45eb5e686a0fa1a3dd035ce97f4c6 git@github.com:FlorentD/MowItNow.git master
+
+# installation de mocha
+$ rvm all do gem install mocha
+
+# utilisation de locate
+$ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
