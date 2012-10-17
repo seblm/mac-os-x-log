@@ -1,11 +1,18 @@
 # installation de groovy
 $ brew install groovy
 
-# mise à jour des formulae brew
-$ sudo brew update
+# install homebrew
+$ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
+$ vi /etc/launchd.conf
+  setenv PATH /usr/local/bin:...
+
+# update brew formulae
+$ brew update
 # réparation après un brew update : "Error: Failure while executing: git checkout -q master"
 $ cd /usr/local
-$ sudo git reset --hard FETCH_HEAD
+$ git reset --hard FETCH_HEAD
+# upgrade all brew softwares
+$ brew upgrade
 
 # clé WPA WLANXEBIA-IT X3b1A1t156-75S3cur1ty
 # clé WPA Freebox_556C6F piscosos96-cominius9-pungunt2?-hores!
