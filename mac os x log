@@ -320,3 +320,20 @@ $ rvm all do gem install mocha
 
 # utilisation de locate
 $ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
+
+# install node
+$ brew install node
+  We recommend prepending the following path to your PATH environment variable to have npm-installed binaries picked up:
+    /usr/local/share/npm/bin
+$ vi /etc/launchd.conf
+  setenv PATH ...:usr/local/share/npm/bin
+  setenv NODEPATH /usr/local/share/npm/lib/node_modules
+
+# install coffee-script
+$ npm install -g coffee-script
+
+# install zombie
+$ npm install -g zombie
+
+# install expect.js
+$ npm install -g expect.js
