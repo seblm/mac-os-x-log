@@ -322,3 +322,12 @@ $ chmod u+x ~/bin/processing
 $ mkdir ~/Documents/Processing2
 $ cd ~/Documents/Processing2
 $ wget http://processing.googlecode.com/files/processing-2.0b3-macosx.zip
+
+# suivi des liens symboliques par httpd
+  <Directory "/Users/seb/Sites/">
+    Options Indexes MultiViews FollowSymLinks
+    AllowOverride Options
+    Order allow,deny
+    Allow from all
+  </Directory>
+$ chmod o+x targetPath
