@@ -114,30 +114,23 @@ $ brew install mysql
 $ unset TMPDIR
 $ mysql_install_db --verbose --user=seb --basedir="/usr/local/Cellar/mysql/5.5.20"
                    --datadir=/usr/local/var/mysql --tmpdir=/tmp
-
-# installation de sonar
-$ cd /Applications/Java
-$ wget http://dist.sonar.codehaus.org/sonar-2.13.1.zip
-$ unzip sonar-2.13.1.zip
-$ cd sonar-2.13.1
 # sarting mysql
 $ mysqld_safe & (or Ctlr+Z bg)
 # init root password
 $ mysqladmin -u root password
 # stoping mysql
 $ mysqladmin -u root -p shutdown
+
+# install sonar
+$ install brew sonar
+$ cd ?/sonar
 $ mysql -u root -p < extras/database/mysql/create_database.sql
 $ vi conf/sonar.properties
   commenter l'url derby et décommenter l'url, le driverClassName et la validationQuery
 $ bin/macosx-universal-64/sonar.sh start
-# arrêter sonar
-$ cd /Applications/Java/sonar-2.13.1 ; bin/macosx-universal-64/sonar.sh stop
-
-# installation de sonar
-$ sudo install brew sonar
-$ sudo [/usr/local/bin/]sonar console
-
-# lancement de sonar dans maven (à vérifier)
+# launch an analysis
+$ mvn sonar:sonar -Djdbc:mysql://localhost:3306/sonar?useUnicode=true&characterEncoding=
+#  or
         <profile>
             <id>sonar</id>
             <activation>
@@ -153,6 +146,8 @@ $ sudo [/usr/local/bin/]sonar console
             </properties>
         </profile>
 $ mvn sonar:sonar
+# stopping sonar
+$ cd /Applications/Java/sonar-2.13.1 ; bin/macosx-universal-64/sonar.sh stop
 
 # installation de jekyll
 $ sudo gem update --system
