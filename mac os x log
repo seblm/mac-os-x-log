@@ -25,6 +25,8 @@ $ cd my-directory/ && git init
 $ git clone git@github.com:<user>/<project>.git
 # ajout des modifications sur le repository distant
 $ git push
+# synchroniser un repository (pull fait un fetch puis un merge avec rebasage)
+$ git pull --rebase origin master
 # création d'une branche
 $ git branch <nom-branche>
 # mise à jour de la branche courante avec une branche b1
@@ -38,12 +40,41 @@ $ git checkout -b experimental origin/experimental
 # partager un projet github
 # git remote add origin git@github.com:seblm/poker-hands-kata.git
 # git push -u origin master
-# créer une branche à partir d'un stash
+# pousser des modifications temporaires
 $ git stash
+# créer une branche à partir d'un stash
 $ git stash branch <nom-branche>
+# réintégrer ces modifications
+$ git stash pop
+# visualiser la pile des modifications
+$ git stash list
 # créer une branche à partir des changements non commités
 $ git checkout -b <nom-branche>
 $ git add (...) && git commit (...)
+# synchroniser la gestion des issues github
+$ git commit -m "#issue-id"
+$ git commit -m "Closes #issue-id"
+
+# créer un repository sur une clé
+$ cd ~/Documents/workspace/miw-automatic-mower
+$ mkdir -p /Volumes/LaCie/git/miw-automatic-mower/
+$ git clone --local --no-hardlinks --bare . /Volumes/LaCie/git/miw-automatic-mower
+$ git remote add usb file:///Volumes/LaCie/git/miw-automatic-mower
+# envoi des modifications suivantes
+$ git push usb
+# mise à jour depuis le repository
+$ git pull --rebase usb master
+#
+# sur un autre ordinateur
+$ git clone file:///Volumes/LaCie/git/miw-automatic-mower
+# mise à jour
+$ git pull --rebase origin
+
+# installation de GitX (L) v0.8.4
+$ wget https://github.com/downloads/laullon/gitx/GitX-L_v0.8.4.zip
+$ unzip GitX-L_v0.8.4.zip /Applications
+$ cd /usr/local/bin
+$ ln -s /Applications/GitX.app/Contents/Resources/gitx
 
 # installation de PostgreSQL (9.1.2)
 $ brew install PostgreSQL
