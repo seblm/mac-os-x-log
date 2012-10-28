@@ -3,8 +3,10 @@ $ brew install groovy
 
 # install homebrew
 $ ruby -e "$(curl -fsSkL raw.github.com/mxcl/homebrew/go)"
-$ vi /etc/launchd.conf
-  setenv PATH /usr/local/bin:...
+$ vi /etc/launchd.conf (/usr/bin:/bin:/usr/sbin:/sbin are values defined by default in /etc/paths) - used by process which do not inherit from shell
+  setenv PATH /usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+$ vi /etc/paths - used by process which inherit from shell
+  add /usr/local/bin at the top of file
 
 # update brew formulae
 $ brew update
