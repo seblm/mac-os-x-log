@@ -290,7 +290,7 @@ $ brew install node
     /usr/local/share/npm/bin
 $ vi /etc/launchd.conf
   setenv PATH ...:usr/local/share/npm/bin
-  setenv NODEPATH /usr/local/share/npm/lib/node_modules
+  setenv NODE_PATH /usr/local/share/npm/lib/node_modules
 
 # install coffee-script
 $ npm install -g coffee-script
