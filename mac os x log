@@ -331,3 +331,8 @@ $ wget http://processing.googlecode.com/files/processing-2.0b3-macosx.zip
     Allow from all
   </Directory>
 $ chmod o+x targetPath
+
+# installation de textmate
+$ cd /Applications
+$ wget https://github.com/downloads/textmate/textmate/TextMate_r9315.tbz
+$ tar -xzvf TextMate_r9315.tbz
