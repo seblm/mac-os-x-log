@@ -14,10 +14,6 @@ $ git reset --hard FETCH_HEAD
 # upgrade all brew softwares
 $ brew upgrade
 
-# clé WPA WLANXEBIA-IT X3b1A1t156-75S3cur1ty
-# clé WPA Freebox_556C6F piscosos96-cominius9-pungunt2?-hores!
-  FreeWifi 5499827133 fd9gRjxmSYdBc4 (marche pas)
-
 # git
 # création d'un repository
 $ cd my-directory/ && git init
