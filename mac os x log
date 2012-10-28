@@ -294,3 +294,25 @@ $ npm install -g zombie
 
 # install expect.js
 $ npm install -g expect.js
+
+# processing
+$ mkdir ~/Documents/Processing
+$ cd ~/Documents/Processing
+$ wget http://www.processing.org # processing-1.5.1-macosx.zip
+$ unzip processing-1.5.1-macosx.zip -d /Applications
+$ wget http://www.art-generatif.com # Generative-Design-Code-Package.zip
+$ unzip Generative-Design-Code-Package.zip 
+$ wget http://www.art-generatif.com # generativedesign.zip
+$ unzip generativedesign.zip -d generativedesign
+$ wget http://www.art-generatif.com # library.zip
+$ wget http://www.art-generatif.com # geomerative-34.zip
+$ wget http://www.art-generatif.com # controlP5.zip
+# after updating java have to launch processing with arch
+$ echo #!/bin/sh > ~/bin/processing
+$ echo arch -i386 /Applications/Processing.app/Contents/MacOS/JavaApplicationStub >> ~/bin/processing
+$ chmod u+x ~/bin/processing
+
+# processing version 2
+$ mkdir ~/Documents/Processing2
+$ cd ~/Documents/Processing2
+$ wget http://processing.googlecode.com/files/processing-2.0b3-macosx.zip
