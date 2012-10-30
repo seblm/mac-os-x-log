@@ -174,7 +174,7 @@ $ sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin
   </dict>
   </plist>
 
-# installation de git
+# install git
 $ sudo brew install git
   The OS X keychain credential helper has been installed to:
     /usr/local/bin/git-credential-osxkeychain
@@ -182,19 +182,6 @@ $ sudo brew install git
     /usr/local/share/git-core/contrib
   Bash completion has been installed to:
     /usr/local/etc/bash_completion.d
-# suppression du git fourni avec MacOSX
-$ cd /usr/bin
-$ sudo rm git                      && sudo ln -s /usr/local/bin/git
-$ sudo rm git-cvsserver            && sudo ln -s /usr/local/bin/git-cvsserver
-$ sudo rm git-receive-pack         && sudo ln -s                git git-receive-pack
-$ sudo rm git-shell                && sudo ln -s /usr/local/bin/git-shell
-$ sudo rm git-upload-archive-apple && sudo ln -s                git git-upload-archive 
-$ sudo rm git-upload-pack          && sudo ln -s /usr/local/bin/git-upload-pack
-$ sudo rm gitk                     && sudo ln -s /usr/local/bin/gitk
-# installation de subtree
-$ cd /usr/local/share/git-core/contrib/subtree
-$ make
-$ sudo make prefix=/usr/local/Cellar/git/1.7.12 install
 
 # installation de ruby via rvm
 $ curl -L get.rvm.io | bash -s stable
