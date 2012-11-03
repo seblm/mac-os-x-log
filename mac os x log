@@ -27,6 +27,8 @@ $ git push
 $ git pull --rebase origin master
 # création d'une branche
 $ git branch <nom-branche>
+# deleting branch
+$ git branch --delete <branch-name>
 # mise à jour de la branche courante avec une branche b1
 $ git merge b1
 # rejouer une liste de commits (les trois derniers par exemple)
