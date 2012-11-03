@@ -292,6 +292,12 @@ $ npm install -g zombie
 # install expect.js
 $ npm install -g expect.js
 
+# install underscore
+$ npm install -g underscore
+
+# install promised-io
+$ npm install -g promised-io
+
 # processing
 $ mkdir ~/Documents/Processing
 $ cd ~/Documents/Processing
