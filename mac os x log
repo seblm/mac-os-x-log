@@ -153,9 +153,12 @@ $ mvn sonar:sonar
 # stopping sonar
 $ cd /Applications/Java/sonar-2.13.1 ; bin/macosx-universal-64/sonar.sh stop
 
-# installation de jekyll
+# install de jekyll
 $ gem update --system
 $ gem install jekyll
+
+# install Pygments
+$ sudo easy_install Pygments
 
 # installation du jdk d'Oracle
 # téléchargement et exécution de jdk-7u6-macosx-x64.dmg
@@ -188,14 +191,30 @@ $ sudo brew install git
 # installation de ruby via rvm
 $ curl -L get.rvm.io | bash -s stable
 # Installing RVM to /Users/seb/.rvm/
-#     Adding rvm PATH line to /Users/seb/.bashrc /Users/seb/.zshrc.
-#     Adding rvm loading line to /Users/seb/.bash_login /Users/seb/.zlogin.
+#    Adding rvm PATH line to /Users/seb/.bashrc /Users/seb/.zshenv.
+#    Adding rvm loading line to /Users/seb/.bash_profile /Users/seb/.zprofile.
 # 
 # Installation of RVM in /Users/seb/.rvm/ is almost complete:
 # 
 #   * To start using RVM you need to run `source /Users/seb/.rvm/scripts/rvm`
 #     in all your open shell windows, in rare cases you need to reopen all shell windows.
+$ rm .zshenv .zprofile
 $ source ~/.rvm/scripts/rvm
+$ vi ~/.bashrc
+# merge previous PATH environment variable definition with $HOME/.rvm/bin
+
+# install ruby
+$ rvm install 1.9.3
+  Fetching yaml-0.1.4.tar.gz to /Users/seb/.rvm/archives
+  Extracting yaml-0.1.4.tar.gz to /Users/seb/.rvm/src
+  Installing yaml to /Users/seb/.rvm/usr
+  Installing Ruby from source to: /Users/seb/.rvm/rubies/ruby-1.9.3-p286
+  ruby-1.9.3-p286 - #extracting ruby-1.9.3-p286 to /Users/seb/.rvm/src/ruby-1.9.3-p286
+  Retrieving rubygems-1.8.24
+  Installing rubygems-1.8.24 for ruby-1.9.3-p286 ...
+  Saving wrappers to '/Users/seb/.rvm/bin'.
+  ruby-1.9.3-p286 - #adjusting #shebangs for (gem irb erb ri rdoc testrb rake).
+  ruby-1.9.3-p286 - #importing default gemsets (/Users/seb/.rvm/gemsets/)
 
 # installation de extreme_startup
 $ rvm install 1.9.2
