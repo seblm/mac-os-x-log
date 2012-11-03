@@ -154,8 +154,8 @@ $ mvn sonar:sonar
 $ cd /Applications/Java/sonar-2.13.1 ; bin/macosx-universal-64/sonar.sh stop
 
 # installation de jekyll
-$ sudo gem update --system
-$ sudo gem install jekyll
+$ gem update --system
+$ gem install jekyll
 
 # installation du jdk d'Oracle
 # téléchargement et exécution de jdk-7u6-macosx-x64.dmg
