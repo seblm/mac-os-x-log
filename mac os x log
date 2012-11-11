@@ -289,7 +289,10 @@ $ md5 -s 20120911FlorentDuveau
 $ git subtree add --prefix=d7e45eb5e686a0fa1a3dd035ce97f4c6 git@github.com:FlorentD/MowItNow.git master
 
 # installation de mocha
-$ rvm all do gem install mocha
+$ npm install -g mocha
+
+# installation de should
+$ npm install -g should
 
 # utilisation de locate
 $ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
