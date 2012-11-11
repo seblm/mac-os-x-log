@@ -355,3 +355,8 @@ $ chmod o+x targetPath
 $ cd /Applications
 $ wget https://github.com/downloads/textmate/textmate/TextMate_r9315.tbz
 $ tar -xzvf TextMate_r9315.tbz
+
+# affichage coloré de ls
+$ vi ~/.bash_profile
+  alias ls="ls -G"
+$ source ~/.bash_profile
