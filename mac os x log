@@ -27,6 +27,8 @@ $ git push
 $ git pull --rebase origin master
 # création d'une branche
 $ git branch <nom-branche>
+# push a local branch to a distant repository
+$ git push origin <branch-name>
 # deleting branch
 $ git branch --delete <branch-name>
 # mise à jour de la branche courante avec une branche b1
