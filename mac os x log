@@ -162,24 +162,8 @@ $ gem install jekyll
 # install Pygments
 $ sudo easy_install Pygments
 
-# installation du jdk d'Oracle
-# téléchargement et exécution de jdk-7u6-macosx-x64.dmg
-# activation et prioritisation dans "Préférences Java"
-# changement des raccourcis vers les exécutables java
-$ cd /usr/bin
-$ sudo rm java javac
-$ sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin/java
-$ sudo ln -s /Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home/bin/javac
-# vi ~/.MacOSX/environment.plist
-  <?xml version="1.0" encoding="UTF-8"?>
-  <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-  <plist version="1.0">
-  <dict>
-  	<key>JAVA_HOME</key>
-  	<!--/System/Library/Frameworks/JavaVM.framework/Home-->
-  	<string>/Library/Java/JavaVirtualMachines/jdk1.7.0_07.jdk/Contents/Home</string>
-  </dict>
-  </plist>
+# install Oracle jdk
+# download and execute jdk-7u9-macosx-x64.dmg
 
 # install git
 $ sudo brew install git
