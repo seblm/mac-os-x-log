@@ -129,7 +129,13 @@ $ mysqladmin -u root -p shutdown
 
 # install sonar
 $ brew install sonar
-$ cd /usr/local/Cellar/sonar/3.3
+  To have launchd start sonar at login:
+      ln -sfv /usr/local/opt/sonar/*.plist ~/Library/LaunchAgents
+  Then to load sonar now:
+      launchctl load ~/Library/LaunchAgents/homebrew.mxcl.sonar.plist
+  Or, if you don't want/need launchctl, you can just run:
+      /usr/local/opt/sonar/bin/sonar console
+$ cd /usr/local/Cellar/sonar/3.4.1
 $ mysql -u root -p < extras/database/mysql/create_database.sql
 $ vi conf/sonar.properties
   commenter l'url derby et décommenter l'url, le driverClassName et la validationQuery
