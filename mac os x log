@@ -355,3 +355,11 @@ $ tar -xzvf TextMate_r9315.tbz
 $ vi ~/.bash_profile
   alias ls="ls -G"
 $ source ~/.bash_profile
+
+# upgrade java
+# go to http://www.oracle.com/technetwork/java/javase/downloads
+# get latest jdk-7u?-macosx-x64.dmg file
+# mount dmg file by clicking on it
+# double-click on auto installer from mounted dmg
+# follow instructions
+$ sudo rm -fr /Library/Java/JavaVirtualMachines/jdk1.7.0_?.jdk
