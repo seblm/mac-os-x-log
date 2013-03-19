@@ -72,9 +72,9 @@ $ git clone file:///Volumes/LaCie/git/miw-automatic-mower
 # mise à jour
 $ git pull --rebase origin
 
-# installation de GitX (L) v0.8.4
-$ wget https://github.com/downloads/laullon/gitx/GitX-L_v0.8.4.zip
-$ unzip GitX-L_v0.8.4.zip /Applications
+# GitX-dev install
+$ wget https://github.com/downloads/rowanj/gitx/GitX-dev-57.dmg
+# double-click on file and drop GitX to /Applications
 $ cd /usr/local/bin
 $ ln -s /Applications/GitX.app/Contents/Resources/gitx
 
