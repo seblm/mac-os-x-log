@@ -17,6 +17,8 @@ $ git reset --hard FETCH_HEAD
 $ brew upgrade
 
 # git
+# setting email in git
+$ git config --global user.email "me@here.com"
 # création d'un repository
 $ cd my-directory/ && git init
 # premier checkout d'un repository github existant
