@@ -354,5 +354,10 @@ $ brew install mongodb
 # Or, if you don't want/need launchctl, you can just run:
 #     mongod
 
+# installing open jdk 8
+# download jdk-8-ea-bin-b84-macosx-x86_64-04_apr_2013.dmg from http://jdk8.java.net/download.html
+# run dmg, double-click on icon and click next
+# install files to /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk and copy as well to /System/Library/Frameworks/JavaVM.framework/Versions/A, link to binaries to /usr/bin
+
 # force to use java 8 for maven build
 $ env JAVA_HOME=`/usr/libexec/java_home` mvn ...
