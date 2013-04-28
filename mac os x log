@@ -353,3 +353,6 @@ $ brew install mongodb
 #     launchctl load ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist
 # Or, if you don't want/need launchctl, you can just run:
 #     mongod
+
+# force to use java 8 for maven build
+$ env JAVA_HOME=`/usr/libexec/java_home` mvn ...
