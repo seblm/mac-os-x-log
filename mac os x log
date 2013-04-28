@@ -246,16 +246,6 @@ $ WARMUP=1 ruby web_server.rb
     </dependencies>
 </project>
 
-# installation de Python
-# déjà installé par XCode
-# installation de Flask
-$ easy_install Flask
-
-# installation du thème solarized pour IntelliJ
-$ cd ~/Library
-$ git clone git://github.com/jkaving/intellij-colors-solarized.git
-$ ln -s ~/Library/intellij-colors-solarized/Solarized\ Dark.xml ~/Library/Preferences/IdeaIC11/colors/Solarized\ Dark.xml
-
 # installation de scala
 ==> Downloading http://www.scala-lang.org/downloads/distrib/files/scala-2.9.2.tgz
 ######################################################################## 100,0%
