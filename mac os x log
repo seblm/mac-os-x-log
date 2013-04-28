@@ -100,17 +100,6 @@ $  pg_ctl -D /usr/local/var/postgres stop -s -m fast
 # créer une base de données
 $ /usr/local/Cellar/postgresql/9.1.2/bin/createdb seb
 
-# support des liens symboliques dans le répertoire utilisateur (le lien pointe vers un sous-
-# répertoire de /Users/seb/Documents)
-$ sudo vi /etc/apache2/users/seb.conf
-  <Directory "/Users/seb/Sites/">
-      Options Indexes MultiViews FollowSymLinks
-      AllowOverride None
-      Order allow,deny
-      Allow from all
-  </Directory>
-$ chmod o+x /Users/seb/Documents
-
 # installation de go
 $ brew install mercurial go
 # installation du plugin go dans IntelliJ IDEA CE 11
