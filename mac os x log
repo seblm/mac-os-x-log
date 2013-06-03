@@ -1,3 +1,6 @@
+# update or set environment variable for bash shell (default Mac OS X Terminal)
+$ export PATH=${PATH}:/usr/local/opt/ruby/bin
+
 # installation de groovy
 $ brew install groovy
 
