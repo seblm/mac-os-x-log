@@ -260,7 +260,7 @@ Bash completion has been installed to:
 $ cd ~/Documents/IdeaProjects/mowers
 $ md5 -s 20120911FlorentDuveau
 $ git subtree add --prefix=d7e45eb5e686a0fa1a3dd035ce97f4c6 git@github.com:FlorentD/MowItNow.git master
-# into IntelliJ : right click on new folder > Add as Maven module
+# into IntelliJ : File > Import Module...
 # add dependency to test/pom.xml
 # create class extends DefaultMowerAdapter or one of his child
 
