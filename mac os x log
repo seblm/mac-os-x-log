@@ -264,12 +264,6 @@ $ git subtree add --prefix=d7e45eb5e686a0fa1a3dd035ce97f4c6 git@github.com:Flore
 # add dependency to test/pom.xml
 # create class extends DefaultMowerAdapter or one of his child
 
-# installation de mocha
-$ npm install -g mocha
-
-# installation de should
-$ npm install -g should
-
 # utilisation de locate
 $ sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.locate.plist
 
@@ -280,20 +274,8 @@ $ brew install node
 $ vi /etc/launchd.conf
   setenv PATH ...:/usr/local/share/npm/bin
 
-# install coffee-script
-$ npm install -g coffee-script
-
-# install zombie
-$ npm install -g zombie
-
-# install expect.js
-$ npm install -g expect.js
-
-# install underscore
-$ npm install -g underscore
-
-# install promised-io
-$ npm install -g promised-io
+# install node packages
+$ npm install -g coffee-script zombie expect.js underscore promised-io mocha should
 
 # processing
 $ mkdir ~/Documents/Processing
