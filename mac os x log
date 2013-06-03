@@ -340,5 +340,5 @@ $ brew install mongodb
 # run dmg, double-click on icon and click next
 # should install files to /Library/Java/JavaVirtualMachines/jdk1.8.0.jdk and copy as well to /System/Library/Frameworks/JavaVM.framework/Versions/A, link to binaries to /usr/bin
 
-# force to use java 8 for maven build
+# force to use java 8 for one maven command
 $ env JAVA_HOME=`/usr/libexec/java_home` mvn ...
