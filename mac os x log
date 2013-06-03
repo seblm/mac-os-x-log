@@ -278,8 +278,7 @@ $ brew install node
   We recommend prepending the following path to your PATH environment variable to have npm-installed binaries picked up:
     /usr/local/share/npm/bin
 $ vi /etc/launchd.conf
-  setenv PATH ...:usr/local/share/npm/bin
-  setenv NODE_PATH /usr/local/share/npm/lib/node_modules
+  setenv PATH ...:/usr/local/share/npm/bin
 
 # install coffee-script
 $ npm install -g coffee-script
