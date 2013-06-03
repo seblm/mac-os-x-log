@@ -345,3 +345,10 @@ $ brew install mongodb
 
 # force to use java 8 for one maven command
 $ env JAVA_HOME=`/usr/libexec/java_home` mvn ...
+
+# installing ruby
+$ brew install ruby
+  NOTE: By default, gem installed binaries will be placed into:
+  /usr/local/opt/ruby/bin
+$ vi /etc/launchd.conf
+  setenv PATH ...:/usr/local/opt/ruby/bin
