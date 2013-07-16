@@ -22,6 +22,8 @@ $ brew upgrade
 # git
 # setting email in git
 $ git config --global user.email "me@here.com"
+# activating colors
+$ git config --global color.ui true
 # création d'un repository
 $ cd my-directory/ && git init
 # premier checkout d'un repository github existant
