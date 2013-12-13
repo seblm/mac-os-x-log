@@ -51,6 +51,8 @@ $ git checkout -b experimental origin/experimental
 # git push -u origin master
 # pousser des modifications temporaires
 $ git stash
+# ou
+$ git stash save "reason"
 # créer une branche à partir d'un stash
 $ git stash branch <nom-branche>
 # réintégrer ces modifications
