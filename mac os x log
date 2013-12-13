@@ -66,6 +66,11 @@ $ git add (...) && git commit (...)
 $ git commit -m "#issue-id"
 $ git commit -m "Closes #issue-id"
 
+# merger un fork : https://help.github.com/articles/syncing-a-fork
+$ git remote add upstream https://github.com/otheruser/repo.git
+$ git fetch upstream
+$ git merge upstream/master
+
 # créer un repository sur une clé
 $ cd ~/Documents/workspace/miw-automatic-mower
 $ mkdir -p /Volumes/LaCie/git/miw-automatic-mower/
