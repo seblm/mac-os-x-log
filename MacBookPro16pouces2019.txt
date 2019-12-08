@@ -1,0 +1,9 @@
+# install hombrew
+$ /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+# install iTerm
+$ brew cask install iterm2
+# install IntelliJ IDEA
+$ brew cask install intellij-idea
+# install ng
+$ brew install node
+$ npm install --global @angular/cli
